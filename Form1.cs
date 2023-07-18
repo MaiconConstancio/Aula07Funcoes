@@ -38,7 +38,7 @@ namespace Aula07Funcoes
             //valor = Double.Parse(textBox1.Text); //Caixinha de texto
             //saldo = Double.Parse(lblDinheiro.Text.Replace("R$:", ""));  // É ONDE TA O R$ e converte em numero
 
-            double dinheiro = double.Parse(dimdim.Text.Replace("R$:", ""));
+            double dinheiro = double.Parse(dimdim.Text.Replace("R$ ", ""));
             return dinheiro;
         }
 
@@ -65,6 +65,21 @@ namespace Aula07Funcoes
         {
             double valor = double.Parse(textBox1.Text);
             double dinheiro = ConverteDinheiro(lblDinheiro);
+            double soma = valor + dinheiro;
+            lblDinheiro.Text = "R$ " + soma;
+        }
+
+        private void lblDinheiro_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCredito_Click(object sender, EventArgs e)
+        {
+            double valor = double.Parse(textBox2.Text);
+            double dinheiro = ConverteDinheiro(label1);
+            double soma = valor + dinheiro;
+            label1.Text = "R$ " + soma;
         }
     }
 }
