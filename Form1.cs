@@ -30,7 +30,7 @@ namespace Aula07Funcoes
             MessageBox.Show($"Olá {nome}");
         }
 
-        void ConverteDinheiro(Label dimdim)
+        double ConverteDinheiro(Label dimdim)
         {
             //double saldo;
             //double valor;
@@ -38,8 +38,8 @@ namespace Aula07Funcoes
             //valor = Double.Parse(textBox1.Text); //Caixinha de texto
             //saldo = Double.Parse(lblDinheiro.Text.Replace("R$:", ""));  // É ONDE TA O R$ e converte em numero
 
-            double valor = double.Parse(dimdim.Text.Replace("R$:", ""));
-
+            double dinheiro = double.Parse(dimdim.Text.Replace("R$:", ""));
+            return dinheiro;
         }
 
 
@@ -63,7 +63,8 @@ namespace Aula07Funcoes
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ConverteDinheiro();
+            double valor = double.Parse(textBox1.Text);
+            double dinheiro = ConverteDinheiro(lblDinheiro);
         }
     }
 }
